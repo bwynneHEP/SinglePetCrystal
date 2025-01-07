@@ -1,0 +1,18 @@
+# Initialize G4
+#/control/verbose 2
+/control/saveHistory
+#
+# Set up magnetic field
+/globalField/verbose 1
+/globalField/setValue 0 0 0 tesla
+#
+##################
+# 
+# Change the viewpoint
+#     # x-section
+#     /vis/viewer/set/viewpointThetaPhi 90 180
+#     # from the corner
+#     /vis/viewer/set/viewpointThetaPhi 120 150
+#     # zoom
+#     /vis/viewer/zoom 1.4
+#
