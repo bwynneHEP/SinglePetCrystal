@@ -1,5 +1,6 @@
 #include "ActionInitialization.h"
 #include "DirectedPhotonAction.h"
+#include "NormalPhotonAction.h"
 
 #include "G4SystemOfUnits.hh"
 
@@ -15,11 +16,17 @@ ActionInitialization::~ActionInitialization()
 
 void ActionInitialization::Build() const
 {
-  if ( m_sourceName.substr( 0, 6 ) == "Photon" )
+  if ( m_sourceName.substr( 0, 11 ) == "PhotonAngle" )
   {
-    G4double incidentAngleDegree = strtod( m_sourceName.substr( 6 ).c_str(), nullptr );
+    G4double incidentAngleDegree = strtod( m_sourceName.substr( 11 ).c_str(), nullptr );
     
     this->SetUserAction( new DirectedPhotonAction( incidentAngleDegree ) );
+  }
+  else if ( m_sourceName.substr( 0, 12 ) == "PhotonOrigin" )
+  {
+    G4double originZmm = strtod( m_sourceName.substr( 12 ).c_str(), nullptr );
+    
+    this->SetUserAction( new NormalPhotonAction( originZmm ) );
   }
   else
   {

@@ -40,5 +40,5 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.h)
 #----------------------------------------------------------------------------
 # Add the executable, and link it to the Geant4 libraries
 #
-add_executable(SimplePetScanner ${sources} ${headers})
-target_link_libraries(SimplePetScanner ${Geant4_LIBRARIES})
+add_executable(SinglePetCrystal ${sources} ${headers})
+target_link_libraries(SinglePetCrystal ${Geant4_LIBRARIES})
